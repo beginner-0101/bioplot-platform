@@ -1,0 +1,6 @@
+Gene,Expression,Group,p_value
+TP53,10.5,Control,0.001
+BRCA1,8.2,Control,0.005
+EGFR,15.3,Treatment,0.01
+MYC,7.8,Treatment,0.02
+KRAS,12.1,Treatment,0.03
