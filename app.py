@@ -23,3 +23,20 @@ if uploaded_file is not None:
         st.write(f"**{col}**: 均值={df[col].mean():.2f}")
 else:
     st.info("👈 请在左侧上传一个CSV文件")
+
+# 在现有代码基础上添加
+import plotly.express as px
+
+# 添加图表选择
+chart_type = st.selectbox("选择图表类型", ["柱状图", "散点图", "箱线图"])
+
+if uploaded_file is not None:
+    # ... 现有代码 ...
+    
+    # 新增：根据选择生成不同图表
+    if chart_type == "柱状图":
+        fig = px.bar(df, x=selected_categorical[0], y=selected_numeric[0])
+    elif chart_type == "散点图":
+        fig = px.scatter(df, x=selected_numeric[0], y=selected_numeric[1])
+    
+    st.plotly_chart(fig)
